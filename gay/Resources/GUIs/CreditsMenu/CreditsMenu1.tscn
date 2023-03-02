@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 4
+load_path = "res://.import/btn_mainmenu.png-485ea915cd133b9a7a18a6dacb624861.stex"
+
+[sub_resource type="GDScript" id=2]
+script/source = "extends TextureButton
+func _pressed():
+	get_parent().get_parent().ChangeMenu(0)
+"
+
+[node name="Control" type="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -512.0
+margin_top = -300.0
+margin_right = 512.0
+margin_bottom = 300.0
+
+[node name="TextureButton4" type="TextureButton" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -305.0
+margin_top = -72.0
+rect_pivot_offset = Vector2( 184, 60 )
+shortcut_in_tooltip = false
+texture_normal = SubResource( 1 )
+script = SubResource( 2 )

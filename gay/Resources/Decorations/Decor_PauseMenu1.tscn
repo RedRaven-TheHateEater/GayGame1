@@ -1,0 +1,77 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Resources/Textures/MainMenu/text_pause.png" type="Texture" id=1]
+[ext_resource path="res://Resources/fonts/Aronder.otf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+extra_spacing_space = 10
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 40
+font_data = ExtResource( 2 )
+
+[node name="Control" type="Control"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -512.0
+margin_right = -157.0
+margin_bottom = 73.0
+
+[node name="TextPause" type="Sprite" parent="."]
+position = Vector2( 310, 2 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Button" type="Button" parent="."]
+margin_left = 250.0
+margin_top = 275.0
+margin_right = 572.0
+margin_bottom = 460.0
+custom_fonts/font = SubResource( 1 )
+text = "убейте меня"
+
+[node name="TextEdit" type="TextEdit" parent="Button"]
+margin_left = -173.0
+margin_top = 33.0
+margin_right = 419.0
+margin_bottom = 133.0
+custom_colors/member_variable_color = Color( 0, 0, 0, 1 )
+custom_colors/code_folding_color = Color( 0, 0, 0, 1 )
+custom_colors/function_color = Color( 0, 0, 0, 1 )
+custom_colors/safe_line_number_color = Color( 0, 0, 0, 1 )
+custom_colors/symbol_color = Color( 0, 1, 0.392157, 1 )
+custom_colors/caret_background_color = Color( 0, 0, 0, 1 )
+custom_colors/bookmark_color = Color( 0, 0, 0, 1 )
+custom_colors/selection_color = Color( 0, 0, 0, 1 )
+custom_colors/caret_color = Color( 0, 0, 0, 1 )
+custom_colors/breakpoint_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/line_number_color = Color( 0, 0, 0, 1 )
+custom_colors/completion_font_color = Color( 0, 0, 0, 1 )
+custom_colors/completion_scroll_color = Color( 0, 0, 0, 1 )
+custom_colors/background_color = Color( 0, 0, 0, 1 )
+custom_colors/number_color = Color( 0, 0, 0, 1 )
+custom_colors/completion_background_color = Color( 0, 0, 0, 1 )
+custom_colors/brace_mismatch_color = Color( 0, 0, 0, 1 )
+custom_colors/current_line_color = Color( 0, 0, 0, 1 )
+custom_colors/completion_selected_color = Color( 0, 0, 0, 1 )
+custom_colors/executing_line_color = Color( 0, 0, 0, 1 )
+custom_colors/mark_color = Color( 0, 0, 0, 1 )
+custom_colors/word_highlighted_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_readonly = Color( 1, 0, 0, 1 )
+custom_colors/completion_existing_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "ПРИШЛО ВРЕМЯ
+ ПЕРЕУСТАНАВЛИВАТЬ ШИНДОВС"
+readonly = true
+context_menu_enabled = false
+shortcut_keys_enabled = false
+virtual_keyboard_enabled = false
+middle_mouse_paste_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+caret_blink_speed = 0.1

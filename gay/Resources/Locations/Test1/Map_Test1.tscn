@@ -1,0 +1,75 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Resources/Controllers/Dialog/DialogController.gd" type="Script" id=1]
+[ext_resource path="res://Resources/Locations/Test1/Dot2.gd" type="Script" id=2]
+[ext_resource path="res://Resources/Locations/Test1/1.gd" type="Script" id=3]
+[ext_resource path="res://Resources/Player/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Resources/Scripts/Camera2D.gd" type="Script" id=5]
+[ext_resource path="res://Resources/Scripts/Controllers/ControllerQuest.gd" type="Script" id=6]
+[ext_resource path="res://Resources/Locations/Test1/Dot5.gd" type="Script" id=7]
+[ext_resource path="res://Resources/Locations/Test1/Dot4.gd" type="Script" id=8]
+[ext_resource path="res://Resources/Locations/Test1/Dot1.gd" type="Script" id=9]
+[ext_resource path="res://Resources/Locations/Test1/Dot3.gd" type="Script" id=10]
+[ext_resource path="res://Resources/Textures/Dot.png" type="Texture" id=11]
+[ext_resource path="res://Resources/Locations/Test1/2.gd" type="Script" id=12]
+[ext_resource path="res://Resources/Controllers/UseableItems/UseableItemsController.gd" type="Script" id=15]
+
+[node name="Node2D" type="YSort"]
+
+[node name="UseableItemsController" type="Node2D" parent="."]
+script = ExtResource( 15 )
+
+[node name="Dot3" type="Sprite" parent="UseableItemsController"]
+show_behind_parent = true
+position = Vector2( 3691, 414 )
+scale = Vector2( 50, 50 )
+texture = ExtResource( 11 )
+script = ExtResource( 10 )
+
+[node name="Dot" type="Sprite" parent="UseableItemsController"]
+position = Vector2( 1254, 423 )
+scale = Vector2( 20, 20 )
+texture = ExtResource( 11 )
+offset = Vector2( 0, -9.53674e-07 )
+script = ExtResource( 9 )
+
+[node name="Dot4" type="Sprite" parent="UseableItemsController"]
+position = Vector2( 3328, 401 )
+scale = Vector2( 20, 20 )
+texture = ExtResource( 11 )
+script = ExtResource( 8 )
+
+[node name="Dot5" type="Sprite" parent="UseableItemsController"]
+position = Vector2( 1048, 11 )
+scale = Vector2( 10, 10 )
+texture = ExtResource( 11 )
+script = ExtResource( 7 )
+
+[node name="Dot2" type="Sprite" parent="UseableItemsController"]
+show_behind_parent = true
+position = Vector2( 1375, 383 )
+scale = Vector2( 50, 50 )
+texture = ExtResource( 11 )
+script = ExtResource( 2 )
+
+[node name="PlayerController" type="Node2D" parent="."]
+
+[node name="Player" parent="PlayerController" instance=ExtResource( 4 )]
+position = Vector2( 873, 270 )
+
+[node name="QuestController" type="Node" parent="."]
+script = ExtResource( 6 )
+
+[node name="DialogController" type="Node2D" parent="."]
+script = ExtResource( 1 )
+
+[node name="1" type="Node" parent="DialogController"]
+script = ExtResource( 3 )
+
+[node name="2" type="Node" parent="DialogController"]
+script = ExtResource( 12 )
+
+[node name="Camera2" type="Camera2D" parent="."]
+position = Vector2( 65.0001, 146 )
+current = true
+script = ExtResource( 5 )

@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Resources/Textures/MainMenu/menu.mp3" type="AudioStream" id=1]
+[ext_resource path="res://Resources/Decorations/MainMenuCringe.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Resources/Scripts/AudioStreamPlayer.gd" type="Script" id=3]
+[ext_resource path="res://Resources/Scripts/ZeroMenu1.gd" type="Script" id=4]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+volume_db = -50.0
+autoplay = true
+mix_target = 2
+script = ExtResource( 3 )
+
+[node name="Control2" parent="." instance=ExtResource( 2 )]
+margin_left = -492.0
+margin_top = -321.0
+margin_right = -492.0
+margin_bottom = -321.0

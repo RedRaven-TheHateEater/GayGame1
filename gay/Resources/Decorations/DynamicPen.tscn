@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Resources/Textures/MainMenu/pen2.png" type="Texture" id=1]
+[ext_resource path="res://Resources/Textures/MainMenu/5896efe57a235e5.png" type="Texture" id=2]
+[ext_resource path="res://Resources/Scripts/pen.gd" type="Script" id=3]
+[ext_resource path="res://Resources/Scripts/Button.gd" type="Script" id=4]
+[ext_resource path="res://Resources/Scripts/DecorMenuArrow.gd" type="Script" id=5]
+
+[node name="Control" type="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -512.0
+margin_top = -300.0
+margin_right = 512.0
+margin_bottom = 300.0
+
+[node name="DecorMenuArrow" type="Sprite" parent="."]
+position = Vector2( 227, 298 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+flip_h = true
+script = ExtResource( 5 )
+
+[node name="Pen2" type="Sprite" parent="."]
+position = Vector2( 846, 286 )
+texture = ExtResource( 2 )
+script = ExtResource( 3 )
+
+[node name="Button" type="Button" parent="Pen2"]
+modulate = Color( 1, 0, 0, 0 )
+margin_left = -27.0
+margin_top = -160.0
+margin_right = 26.0
+margin_bottom = 172.0
+script = ExtResource( 4 )

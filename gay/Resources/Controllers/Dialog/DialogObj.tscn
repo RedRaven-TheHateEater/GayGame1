@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Resources/fonts/miamiwriting.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Resources/Controllers/Dialog/DialogText.gd" type="Script" id=2]
+[ext_resource path="res://Resources/Controllers/Dialog/DialogObj.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.945098, 0.129412, 0.129412, 0 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0, 0, 0, 0.588235 )
+
+[node name="DialogObj" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+
+[node name="DialogText" type="TextEdit" parent="."]
+margin_right = 693.0
+margin_bottom = 121.0
+custom_colors/font_color_readonly = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 1 )
+custom_styles/read_only = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+text = "ЧЕЛ
+ЧЛЕ"
+readonly = true
+context_menu_enabled = false
+shortcut_keys_enabled = false
+virtual_keyboard_enabled = false
+middle_mouse_paste_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+script = ExtResource( 2 )

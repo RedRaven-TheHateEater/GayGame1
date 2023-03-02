@@ -1,0 +1,96 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Resources/Decorations/DynamicPen.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Resources/Scripts/main_menu.gd" type="Script" id=2]
+[ext_resource path="res://Resources/Textures/MainMenu/btn_settings.png" type="Texture" id=3]
+[ext_resource path="res://Resources/Textures/CreditsButton.png" type="Texture" id=4]
+[ext_resource path="res://Resources/Textures/AchivesButton.png" type="Texture" id=5]
+[ext_resource path="res://Resources/Textures/MainMenu/btn_start.png" type="Texture" id=6]
+[ext_resource path="res://Resources/Textures/MainMenu/btn_exit.png" type="Texture" id=7]
+[ext_resource path="res://Resources/Scripts/TextureButton3.gd" type="Script" id=8]
+[ext_resource path="res://Resources/Scripts/TextureButton2.gd" type="Script" id=9]
+[ext_resource path="res://Resources/Scripts/btn_achive.gd" type="Script" id=10]
+[ext_resource path="res://Resources/Scripts/btn_credits.gd" type="Script" id=11]
+[ext_resource path="res://Resources/Scripts/TextureButtonlol.gd" type="Script" id=12]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="Control4" parent="." instance=ExtResource( 1 )]
+margin_right = -454.0
+margin_bottom = -226.0
+
+[node name="btn_play" type="TextureButton" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -125.5
+margin_top = 50.0
+margin_right = 125.5
+margin_bottom = 114.0
+rect_pivot_offset = Vector2( 184, 60 )
+mouse_default_cursor_shape = 2
+shortcut_in_tooltip = false
+texture_normal = ExtResource( 6 )
+script = ExtResource( 12 )
+
+[node name="btn_achive" type="TextureButton" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -313.0
+margin_top = -170.0
+margin_right = 316.0
+margin_bottom = -47.0
+rect_pivot_offset = Vector2( -950, -200 )
+mouse_default_cursor_shape = 2
+shortcut_in_tooltip = false
+texture_normal = ExtResource( 5 )
+script = ExtResource( 10 )
+
+[node name="btn_settings" type="TextureButton" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -113.0
+margin_top = -28.0
+margin_right = 113.0
+margin_bottom = 28.0
+rect_pivot_offset = Vector2( 184, 60 )
+mouse_default_cursor_shape = 2
+shortcut_in_tooltip = false
+texture_normal = ExtResource( 3 )
+script = ExtResource( 8 )
+
+[node name="btn_credits" type="TextureButton" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -282.0
+margin_top = 57.0
+margin_right = 294.0
+margin_bottom = 180.0
+rect_pivot_offset = Vector2( 315, 54 )
+mouse_default_cursor_shape = 2
+shortcut_in_tooltip = false
+texture_normal = ExtResource( 4 )
+script = ExtResource( 11 )
+
+[node name="btn_exit" type="TextureButton" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -166.0
+margin_top = -100.0
+margin_right = 167.0
+margin_bottom = -34.0
+rect_pivot_offset = Vector2( 184, 60 )
+mouse_default_cursor_shape = 2
+shortcut_in_tooltip = false
+texture_normal = ExtResource( 7 )
+script = ExtResource( 9 )

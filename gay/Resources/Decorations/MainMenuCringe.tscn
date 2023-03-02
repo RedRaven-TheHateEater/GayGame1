@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Resources/Textures/MainMenu/paper1.png" type="Texture" id=3]
+[ext_resource path="res://Resources/Scripts/Paper1.gd" type="Script" id=4]
+[ext_resource path="res://Resources/Scripts/pen3.gd" type="Script" id=5]
+[ext_resource path="res://Resources/Textures/MainMenu/pen3.png" type="Texture" id=6]
+[ext_resource path="res://Resources/Textures/MainMenu/8H33CBJzXVRFl0GLSB5lAzKX_400x400.png" type="Texture" id=7]
+[ext_resource path="res://Resources/Scripts/books.gd" type="Script" id=8]
+
+[node name="Control" type="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -512.0
+margin_top = -300.0
+margin_right = 512.0
+margin_bottom = 300.0
+
+[node name="Pen3" type="Sprite" parent="."]
+position = Vector2( 94, 83 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 6 )
+script = ExtResource( 5 )
+
+[node name="Paper1" type="Sprite" parent="."]
+position = Vector2( 726, 136 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 3 )
+script = ExtResource( 4 )
+
+[node name="books" type="Sprite" parent="."]
+position = Vector2( 217, 482 )
+texture = ExtResource( 7 )
+script = ExtResource( 8 )

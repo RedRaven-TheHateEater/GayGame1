@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Resources/fonts/miamiwriting.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Resources/Textures/MainMenu/pen2.png" type="Texture" id=2]
+[ext_resource path="res://Resources/Controllers/UseableItems/UseableItemsObj.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=4]
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 1, 0, 0, 0 )
+
+[node name="UseableItemsObj" type="Control"]
+margin_right = 1024.0
+margin_bottom = 600.0
+rect_pivot_offset = Vector2( -329, 9 )
+script = ExtResource( 3 )
+
+[node name="UsingArrow" type="Sprite" parent="."]
+position = Vector2( 83.0001, 26 )
+rotation = 1.5708
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 2 )
+
+[node name="UsingText" type="TextEdit" parent="."]
+margin_left = 67.0001
+margin_top = -31.0
+margin_right = 149.0
+margin_bottom = 5.0
+custom_colors/font_color_readonly = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 4 )
+custom_styles/read_only = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+text = "ы"
+readonly = true
+context_menu_enabled = false
+shortcut_keys_enabled = false
+virtual_keyboard_enabled = false
+middle_mouse_paste_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
