@@ -9,4 +9,5 @@ func UseIt():
 	print("да")
 	print("нет")
 	var player = Lib.GetNodeByName("PlayerController",get_parent().get_parent())
-	player.TeleportMove(Vector3(2000,0,0),Lib.FileRead("Saves/Settings")[1])
+	var end_pos = get_node("Position2D").position
+	player.Teleport(end_pos)

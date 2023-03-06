@@ -3,18 +3,16 @@ const Lib = preload("res://Resources/Scripts/lib.gd")
 var sas = Vector2() # The player's movement vector.
 var PlayerCamera
 
-var OrigPos
 var enerc
-var CanJump
 var Speed = 3
 var KOEF_Z=0.8
+var PlayerSprite
 
 
 func _ready():
+	PlayerSprite = get_child(0)
 	PlayerCamera = Lib.GetNodeByName("Camera2",get_parent().get_parent())
-	
-	OrigPos = Vector3(position.x,0,position.y*KOEF_Z)
-	enerc = Vector3(0,0,0)
+	enerc = Vector2(0,0)
 	PlayerCamera.position=position
 
 
@@ -34,33 +32,30 @@ func _process(delta):
 		Speed=8
 	else:
 		Speed=3
-	if Input.is_action_pressed("Jump") and CanJump:
+	if Input.is_action_pressed("Jump"):
 		enerc.y+=20
-	
+
 	if Input.is_action_pressed("ui_right"):
 		enerc.x+=Speed-enerc.x
+		scale = Vector2(-1,1)
 	elif Input.is_action_pressed("ui_left"):
 		enerc.x-=Speed+enerc.x
+		scale = Vector2(1,1)
 	if Input.is_action_pressed("ui_down") :
-		enerc.z+=Speed-enerc.z
+		enerc.y+=Speed-enerc.y
 	elif Input.is_action_pressed("ui_up") :
-		enerc.z-=Speed+enerc.z
-
-	OrigPos+=enerc
-	position = Vec3ToVec2(OrigPos)
-	PlayerCamera.SetPos(position)
-	if(abs(enerc.x)>0 and CanJump):
-		enerc.x-=Znak(enerc.x)
-		
-	if(abs(enerc.z)>0 and CanJump):
-		enerc.z-=Znak(enerc.z)
+		enerc.y-=Speed+enerc.y
 	
-	if(OrigPos.y>0):
-		enerc.y-=1
-		CanJump=false
-	else:
-		CanJump=true
-		enerc.y=0-OrigPos.y
+	position+=enerc
+	PlayerCamera.SetPos(position)
+	if(abs(enerc.x)>0):
+		enerc.x-=Znak(enerc.x)
+		PlayerSprite.playing = true
+	else: 
+		PlayerSprite.playing = false
+	if(abs(enerc.y)>0):
+		enerc.y-=Znak(enerc.y)
+
 	
 	
 	#move_and_collide(sas)
@@ -73,31 +68,15 @@ func _process(delta):
 
 	#хороший извращенец - мёртвый извращенец
 
+	if Input.is_action_pressed("test_button"):
+		position = Vector2(2,0)
+		PlayerCamera.position = position
 
 
-func Vec3ToVec2(Vec3):
-	return Vector2(Vec3.x,-Vec3.y+(Vec3.z*KOEF_Z))
 func Teleport(Vector3Pos,camreset):
 	if camreset:
-		OrigPos += Vector3Pos
-		position = Vec3ToVec2(OrigPos)
+		position += Vector3Pos
 		PlayerCamera.position = position
-	else:
-		var NEWpos = Vec3ToVec2(Vector3Pos)
-		OrigPos = Vector3Pos
-		PlayerCamera.position = PlayerCamera.position-position+NEWpos
-		position = NEWpos
-func TeleportMove(Vector3Pos,camreset):
-	if camreset:
-		OrigPos += Vector3Pos
-		position = Vec3ToVec2(OrigPos)
-		PlayerCamera.position = position
-	else:
-		var NEWpos = Vec3ToVec2(Vector3Pos)
-		OrigPos += Vector3Pos
-		PlayerCamera.position=PlayerCamera.position  + NEWpos
-		position += NEWpos
-
-		
+	
 
 	
