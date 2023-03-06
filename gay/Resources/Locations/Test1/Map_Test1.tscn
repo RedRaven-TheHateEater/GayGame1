@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Resources/Controllers/Dialog/DialogController.gd" type="Script" id=1]
 [ext_resource path="res://Resources/Locations/Test1/Dot2.gd" type="Script" id=2]
@@ -13,7 +13,16 @@
 [ext_resource path="res://Resources/Textures/Dot.png" type="Texture" id=11]
 [ext_resource path="res://Resources/Locations/Test1/2.gd" type="Script" id=12]
 [ext_resource path="res://Resources/Textures/MainMenu/132132-2.jpg" type="Texture" id=13]
+[ext_resource path="res://Resources/Locations/Test1/FpsCounter.gd" type="Script" id=14]
 [ext_resource path="res://Resources/Controllers/UseableItems/UseableItemsController.gd" type="Script" id=15]
+[ext_resource path="res://Resources/fonts/Waildesh.otf" type="DynamicFontData" id=16]
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+font_data = ExtResource( 16 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
 
 [node name="Node2D" type="YSort"]
 
@@ -84,3 +93,12 @@ script = ExtResource( 12 )
 position = Vector2( 65.0001, 146 )
 current = true
 script = ExtResource( 5 )
+
+[node name="FPS" type="TextEdit" parent="Camera2"]
+margin_left = -506.0
+margin_top = -313.0
+margin_right = -394.0
+margin_bottom = -253.0
+custom_fonts/font = SubResource( 1 )
+custom_styles/normal = SubResource( 2 )
+script = ExtResource( 14 )
